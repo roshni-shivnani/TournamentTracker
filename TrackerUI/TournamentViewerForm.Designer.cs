@@ -1,4 +1,6 @@
-﻿namespace TrackerUI
+﻿using System;
+
+namespace TrackerUI
 {
     partial class TournamentViewerForm
     {
@@ -11,6 +13,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// 
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -132,11 +136,12 @@
             this.teamOneScoreLabel.AutoSize = true;
             this.teamOneScoreLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teamOneScoreLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.teamOneScoreLabel.Location = new System.Drawing.Point(593, 346);
+            this.teamOneScoreLabel.Location = new System.Drawing.Point(593, 339);
             this.teamOneScoreLabel.Name = "teamOneScoreLabel";
             this.teamOneScoreLabel.Size = new System.Drawing.Size(120, 54);
             this.teamOneScoreLabel.TabIndex = 7;
             this.teamOneScoreLabel.Text = "Score";
+            this.teamOneScoreLabel.Click += new System.EventHandler(this.teamOneScoreLabel_Click);
             // 
             // teamOneScoreValue
             // 
@@ -249,6 +254,14 @@
         private System.Windows.Forms.Label teamTwoName;
         private System.Windows.Forms.Label versusLabel;
         private System.Windows.Forms.Button scoreButton;
+
+        public System.Windows.Forms.FormWindowState WindowState { get; set; }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+        }
     }
 }
 

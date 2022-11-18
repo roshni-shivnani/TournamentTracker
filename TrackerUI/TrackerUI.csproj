@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{41DF1652-FD00-4603-8D27-10C51226288E}</ProjectGuid>
+    <ProjectGuid>{3550430C-B6AE-4CDB-975E-20658FE0B8F1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>TrackerUI</RootNamespace>
     <AssemblyName>TrackerUI</AssemblyName>
@@ -35,6 +35,14 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +54,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreatePrize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePrize.Designer.cs">
+      <DependentUpon>CreatePrize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTeamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateTeamForm.Designer.cs">
+      <DependentUpon>CreateTeamForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateTournamentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateTournamentForm.Designer.cs">
       <DependentUpon>CreateTournamentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TournamentDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TournamentDashboardForm.Designer.cs">
+      <DependentUpon>TournamentDashboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TournamentViewerForm.cs">
       <SubType>Form</SubType>
@@ -58,8 +86,12 @@
     <Compile Include="TournamentViewerForm.Designer.cs">
       <DependentUpon>TournamentViewerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreatePrize.resx">
+      <DependentUpon>CreatePrize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateTeamForm.resx">
+      <DependentUpon>CreateTeamForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateTournamentForm.resx">
       <DependentUpon>CreateTournamentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -72,9 +104,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TournamentDashboardForm.resx">
+      <DependentUpon>TournamentDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TournamentViewerForm.resx">
       <DependentUpon>TournamentViewerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +123,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrackerLibrary\TrackerLibrary.csproj">
+      <Project>{0e384b8b-323e-47b2-99bf-bace17e10963}</Project>
+      <Name>TrackerLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

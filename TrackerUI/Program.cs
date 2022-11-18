@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TrackerLibrary;
 
 namespace TrackerUI
 {
-    internal static class Program
+    static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -17,7 +18,10 @@ namespace TrackerUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new CreateTournamentForm());
-            Application.Run(new TournamentViewerForm());
+
+            TrackerLibrary.GlobalConfig.IntializeConnections(true, true);
+            //Application.Run(new TournamentViewerForm());
+            Application.Run(new CreatePrize());
 
         }
     }

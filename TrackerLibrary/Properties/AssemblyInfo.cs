@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TrackerUI")]
+[assembly: AssemblyTitle("TrackerLibrary")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TrackerUI")]
+[assembly: AssemblyProduct("TrackerLibrary")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3550430c-b6ae-4cdb-975e-20658fe0b8f1")]
+[assembly: Guid("0e384b8b-323e-47b2-99bf-bace17e10963")]
 
 // Version information for an assembly consists of the following four values:
 //
