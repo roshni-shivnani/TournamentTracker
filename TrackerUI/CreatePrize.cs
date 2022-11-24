@@ -20,7 +20,7 @@ namespace TrackerUI
         public CreatePrize()
         {
             InitializeComponent();
-            this.Controls.Clear();
+            //this.Controls.Clear();
         }
 
         private void createPrizeButton_Click(object sender, EventArgs e)
@@ -28,10 +28,10 @@ namespace TrackerUI
             if (ValidateForm())
             {
                 PrizeModel model = new PrizeModel(placeNameValue.Text, placeNumberValue.Text, prizeAmountValue.Text, prizePercentageValue.Text);
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreatePrize(model);
-                }
+                //uncomment foreach (IDataConnection db in GlobalConfig.Connections)
+                //{
+                    GlobalConfig.Connections.CreatePrize(model);
+                //}
                 placeNameValue.Text = "";
                 placeNumberValue.Text = "";
                 prizeAmountValue.Text = "0";

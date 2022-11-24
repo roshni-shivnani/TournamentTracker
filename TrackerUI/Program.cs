@@ -19,9 +19,9 @@ namespace TrackerUI
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new CreateTournamentForm());
 
-            TrackerLibrary.GlobalConfig.IntializeConnections(true, true);
+            TrackerLibrary.GlobalConfig.IntializeConnections(DatabaseType.Sql);//intead of sql write textfile          //to vrfy createteamfrm vhng to sql //selectedmemeber to txt file -TEtextfiel
             //Application.Run(new TournamentViewerForm());
-            Application.Run(new CreatePrize());
+            Application.Run(new CreateTournamentForm());
 
         }
     }

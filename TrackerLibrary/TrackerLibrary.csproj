@@ -68,7 +68,8 @@
   <ItemGroup>
     <Compile Include="DataAccess\IDataConnection.cs" />
     <Compile Include="DataAccess\SqlConnector.cs" />
-    <Compile Include="DataAccess\TextConnectior.cs" />
+    <Compile Include="DataAccess\TextConnector.cs" />
+    <Compile Include="DataAccess\TextConnectorProcessor.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="Models\Class1.cs" />

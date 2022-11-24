@@ -14,7 +14,7 @@ namespace TrackerLibrary.Models
 
         public decimal PrizeAmount { get; set; }
 
-        public decimal PrizePercentage { get; set; }
+        public double PrizePercentage { get; set; }
 
         public PrizeModel(string placeName, string placeNumber, string prizeAmount, string prizePercentage)
         {
@@ -33,6 +33,10 @@ namespace TrackerLibrary.Models
             int.TryParse(prizePercentage, out prizePercentageValue);
             PrizePercentage = prizePercentageValue;
             //PriceAmount = priceAmount;
+        }
+        public PrizeModel()
+        {
+
         }
     }
 }
